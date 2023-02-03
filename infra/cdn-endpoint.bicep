@@ -13,7 +13,7 @@ param cdnProfileName string
 resource endpoint 'Microsoft.Cdn/profiles/endpoints@2022-05-01-preview' = {
   parent: cdnProfile
   name: name
-  location: location 
+  location: location
   tags: tags
   properties: {
     originHostHeader: originUrl
