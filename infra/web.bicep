@@ -28,5 +28,5 @@ resource keyVault 'Microsoft.KeyVault/vaults@2022-07-01' existing = {
 
 output SERVICE_WEB_IDENTITY_PRINCIPAL_ID string = app.outputs.identityPrincipalId
 output SERVICE_WEB_NAME string = app.outputs.name
-output SERVICE_WEB_URI string = app.outputs.uri
+output appUri string = app.outputs.uri
 output SERVICE_WEB_IMAGE_NAME string = app.outputs.imageName

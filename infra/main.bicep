@@ -46,9 +46,33 @@ module containerApps 'core/host/container-apps.bicep' = {
   params: {
     name: 'app'
     location: location
+    tags: tags
     containerAppsEnvironmentName: '${prefix}-containerapps-env'
     containerRegistryName: '${replace(prefix, '-', '')}registry'
     logAnalyticsWorkspaceName: logAnalyticsWorkspace.outputs.name
+  }
+}
+
+// CDN in front
+module cdnProfile 'cdn-profile.bicep' = {
+  name: 'cdn-profile'
+  scope: resourceGroup
+  params: {
+    name: '${prefix}-cdn-profile'
+    location: location
+    tags: tags
+  }
+}
+
+module cdnEndpoint 'cdn-endpoint.bicep' = {
+  name: 'cdn-endpoint'
+  scope: resourceGroup
+  params: {
+    name: '${prefix}-cdn-endpoint'
+    location: location
+    tags: tags
+    cdnProfileName: '${prefix}-cdn-profile'
+    originUrl: last(split(web.outputs.appUri, '//'))
   }
 }
 
@@ -59,6 +83,7 @@ module web 'web.bicep' = {
   params: {
     name: '${take(prefix,19)}-containerapp'
     location: location
+    tags: tags
     imageName: webImageName
     containerAppsEnvironmentName: containerApps.outputs.environmentName
     containerRegistryName: containerApps.outputs.registryName
@@ -77,12 +102,13 @@ module logAnalyticsWorkspace 'core/monitor/loganalytics.bicep' = {
   }
 }
 
+
 output AZURE_LOCATION string = location
 output AZURE_CONTAINER_ENVIRONMENT_NAME string = containerApps.outputs.environmentName
 output AZURE_CONTAINER_REGISTRY_NAME string = containerApps.outputs.registryName
 output AZURE_CONTAINER_REGISTRY_ENDPOINT string = containerApps.outputs.registryLoginServer
 output SERVICE_WEB_IDENTITY_PRINCIPAL_ID string = web.outputs.SERVICE_WEB_IDENTITY_PRINCIPAL_ID
 output SERVICE_WEB_NAME string = web.outputs.SERVICE_WEB_NAME
-output SERVICE_WEB_URI string = web.outputs.SERVICE_WEB_URI
+output SERVICE_WEB_ENDPOINTS array = [cdnEndpoint.outputs.uri]
 output SERVICE_WEB_IMAGE_NAME string = web.outputs.SERVICE_WEB_IMAGE_NAME
 output AZURE_KEY_VAULT_NAME string = keyVault.outputs.name

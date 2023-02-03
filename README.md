@@ -11,13 +11,13 @@ Steps for running the server:
 2. Install the requirements:
 
 ```shell
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
 3. Run the local server: (or use VS Code "Run" button and select "Run server")
 
 ```shell
-flask run
+flask --debug run
 ```
 
 3. Click 'http://127.0.0.1:5000' in the terminal, which should open the website in a new tab
