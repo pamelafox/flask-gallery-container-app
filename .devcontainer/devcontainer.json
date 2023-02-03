@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.245.0/containers/python-3
 {
-	"name": "simple-flask-server-example",
+	"name": "flask-gallery-container-app",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"context": ".."
@@ -27,7 +27,7 @@
 				"ms-azuretools.vscode-bicep"
 			],
 			// Set *default* container specific settings.json values on container create.
-			"settings": { 
+			"settings": {
 				"python.defaultInterpreterPath": "/usr/local/bin/python",
 				"python.linting.enabled": true,
 				"python.linting.pylintEnabled": true,
