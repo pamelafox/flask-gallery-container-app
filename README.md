@@ -89,4 +89,4 @@ These are only provided as an example, as of Feb-2023. The PostgreSQL server has
 
 ## Getting help
 
-If you're working with this project and running into issues, please post in [Discussions](/discussions).
+If you're working with this project and running into issues, please post in **Discussions**.
