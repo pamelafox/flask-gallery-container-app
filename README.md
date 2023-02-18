@@ -81,7 +81,7 @@ azd pipeline config
 
 These are only provided as an example, as of Feb-2023. The PostgreSQL server has an hourly cost, so if you are not actively using the app, remember to run `azd down` or delete the resource group to avoid unnecessary costs.
 
-- Azure CDN - Standard tier, $0.081 per GB for first 10 TB per month. [Pricing](https://azure.microsoft.com/en-in/pricing/details/cdn/)
+- Azure CDN - Standard tier, $0.081 per GB for first 10 TB per month. [Pricing](https://azure.microsoft.com/pricing/details/cdn/)
 - Azure Container App - Consumption tier with 0.5 CPU, 1GiB memory/storage Pricing is based on resource allocation, and each month allows for a certain amount of free usage, ~$2/month. [Pricing](https://azure.microsoft.com/pricing/details/container-apps/)
 - Azure Container Registry - Basic tier. $0.167/day, ~$5/month. [Pricing](https://azure.microsoft.com/pricing/details/container-registry/)
 - Key Vault - Standard tier. $0.04/10,000 transactions. Only a few transactions are used on each deploy. [Pricing](https://azure.microsoft.com/pricing/details/key-vault/)
@@ -89,4 +89,4 @@ These are only provided as an example, as of Feb-2023. The PostgreSQL server has
 
 ## Getting help
 
-If you're working with this project and running into issues, please post in [Discussions](/discussions).
+If you're working with this project and running into issues, please post in **Discussions**.
