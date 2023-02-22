@@ -11,17 +11,17 @@ Steps for running the server:
 2. Install the requirements:
 
     ```shell
-    pip install -r requirements-dev.txt
+    python3 -m pip install -r requirements-dev.txt
     ```
 
 3. Run the local server: (or use VS Code "Run" button and select "Run server")
 
     ```shell
-    flask --debug run
+    python3 -m flask --debug run
     ```
 
 3. Click 'http://127.0.0.1:5000' in the terminal, which should open the website in a new tab
-4. Try the index page, try '/hello?name=yourname', and try other paths.
+4. Confirm the photos load on the index page and click a photo to see the order page.
 
 
 ### Local development with Docker
