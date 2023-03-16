@@ -31,4 +31,4 @@ jobs:
         - name: Check formatting with black
           run: black . --check --verbose
         - name: Compile python code
-          run: python3 -m py_compile app.py
+          run: python3 -m pytest
