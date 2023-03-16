@@ -1,0 +1,14 @@
+[tool.black]
+line-length = 200
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 200
+select = ["E", "F", "I", "UP"]
+target-version = "py311"
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+pythonpath = [
+  "src"
+]
