@@ -17,11 +17,11 @@ Steps for running the server:
 3. Run the local server: (or use VS Code "Run" button and select "Run server")
 
     ```shell
-    python3 -m flask --debug run
+    python3 -m flask --debug --app src/app:app run --port 5000
     ```
 
 3. Click 'http://127.0.0.1:5000' in the terminal, which should open the website in a new tab
-4. Confirm the photos load on the index page and click a photo to see the order page.
+4. Confirm the photos load on the index page and click "Order Print" to see the order page.
 
 
 ### Local development with Docker
@@ -32,7 +32,7 @@ You need to either have Docker Desktop installed or have this open in Github Cod
 1. Build the image:
 
     ```shell
-    docker build --tag flask-app .
+    docker build --tag flask-app src/
     ```
 
 2. Run the image:

@@ -32,3 +32,5 @@ jobs:
           run: black . --check --verbose
         - name: Compile python code
           run: python3 -m py_compile app.py
+        - name: Check gunicorn config
+          run: gunicorn --check-config src.app:app
